@@ -1,0 +1,16 @@
+
+header{
+    background-color: rgb(49, 52, 59);
+}
+
+h3 {
+    color: white;
+    margin-top: 10px;
+    font-style:italic;
+}
+
+nav{
+    float: right;
+    margin-right: 35px;
+    font-style:italic;
+}
