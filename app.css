@@ -1,16 +1,32 @@
 
+
+body{
+    background-image: url("image2.jpg");
+}
+
 header{
-    background-color: rgb(49, 52, 59);
+    /* background-color: rgb(49, 52, 59); */
+    background-color:rgb(69, 82, 115);
+    padding: 10px;
+
 }
 
 h3 {
     color: white;
-    margin-top: 10px;
+    padding-left: 40px;
     font-style:italic;
-}
+    display: inline;
+    }
 
-nav{
-    float: right;
-    margin-right: 35px;
-    font-style:italic;
-}
+.infobox{
+        /* display: inline; */
+        background-color: white;
+        text-indent: right;
+        width: 400px;
+        height: 400px;
+        margin-top: 50px;
+        padding-top: 10px;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-bottom: 10px;
+    }
