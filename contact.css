@@ -1,0 +1,33 @@
+body{
+    background-image: url("image1.jpg");
+}
+
+header{
+    /* background-color: rgb(49, 52, 59); */
+    background-color:rgb(69, 82, 115);
+    padding: 10px;
+
+}
+#heading-name{
+    color: white;
+    padding-left: 40px;
+    font-style:italic;
+    display: inline; 
+}
+
+h3 {
+    color: white;
+    /* padding-left: 40px; */
+    display: inline;
+    }
+    h1{
+        /* color: rebeccapurple; */
+        color: white;
+        margin-top: 70px;
+        margin-right: 30px;
+    
+    }
+  #box{
+    
+  }
+  
