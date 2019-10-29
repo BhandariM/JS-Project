@@ -1,63 +1,56 @@
 function formSubmit() {
-  // var uname = document.getElementById("username").value;
-  // var frstdrpdwn = document.getElementById("mainMenu").value;
-  // var scnddrpdwn = document.getElementById("secondMenu").value;
-  // var cmnt = document.getElementById("commentbox").value;
-  var inputs = document.getElementsByClassName('validate');
+  var uname = document.getElementById("username").value;
+  var frstdrpdwn = document.getElementById("mainMenu").value;
+  var scnddrpdwn = document.getElementById("secondMenu").value;
+  var phnum = document.getElementById("phnum").value;
+  var cmnt = document.getElementById("commentbox").value;
+
+  // for (let i = 0; i < array.length; i++) {
+  //  constelement = validation.value;
+  // }
 
 
-
-
-  var inputs = document.getElementsByClassName
-  for (var i = 0; i < inputs.length; i++) {
-    var element = inputs[i];
-    if (!element.value) {
-      alert("Please enter all fields!");
-      return false;
-    }
+  //----form validation----
+  if (uname == '' || frstdrpdwn == '' || scnddrpdwn == '' || phnum == '' || cmnt == '') {
+    alert("Please enter all fields!");
+    return false;
+  } else {
+    document.getElementById("subbtn").disabled = true;
   }
+
+  phnum();
+
   console.log(uname, "is my name");
   console.log(frstdrpdwn, "is the score");
   console.log(scnddrpdwn, "is the rating");
+  console.log(phnum, "is my num");
   console.log(cmnt, "are the comments ");
-
-  for (var j = 0; j < inputs.length; j++) {
-    var elementClear = inputs[j];
-    elementClear.value = "";
-  }
-  //----form validation-----
-
-
-  // if (frstdrpdwn.value == "good") {
-  //   document.getElementById("secondMenu").disable = false;
-  // } else {
-  //   document.getElementById("secondMenu").disable = true;
-  // }
-
-
-  // if(uname  == ""){
-  //   alert( "Please provide your name!" );
-  //   return false;
-  // }
-  // if(frstdrpdwn == ""){
-  //   alert( "Please describe the website!" );
-  //   return false;
-  // }
-  // if(scnddrpdwn == ""){
-  //   alert( "Please provide your rating!" );
-  //   return false;
-  // }
-  // if(cmnt == ""){
-  //   alert( "Please provide your comments!" );
-  //   return false;
-  // }
-
- 
+  var clear = document.getElementById("username").value = " ";
+  var clear = document.getElementById("mainMenu").value = " ";
+  var clear = document.getElementById("secondMenu").value = " ";
+  var clear = document.getElementById("phnum").value = " ";
+  var clear = document.getElementById("commentbox").value = " ";
   alert("Thanks for your valuable input");
   document.getElementById("comment").innerHTML == "If you like or dislike this page please enter comments or suggestions below." +
     '\n' + " This helps me to improve my skills in required areas. Thanks!.";
+  console.log(clear, "mouni clear");
 
 }
+
+
+//  function phnum(inputtxt){
+//    var phoneno = /^\d{10}$/;
+//   // var phoneno = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+//    if((inputtxt.value.match(phoneno)) 
+//    {
+//        return true;
+//       }
+//        else{
+//          alert("message");
+//          return false;
+//          }
+//  }
+
 
 //  var local_data = data;
 
@@ -108,7 +101,8 @@ function formSubmit() {
 let secondDropdown = document.getElementById('secondMenu');
 secondDropdown.length = 0;
 let defaultOption = document.createElement('option');
-defaultOption.text = 'Choose rating';
+defaultOption.text = "choose rating";
+defaultOption.value = "";
 secondDropdown.add(defaultOption);
 secondDropdown.selectedIndex = 0;
 const url = 'https://jsonplaceholder.typicode.com/comments';
@@ -119,12 +113,7 @@ request.onload = function () {
   if (request.status === 200) {
     const data = JSON.parse(request.responseText);
     let option;
-    for (let i = 0; i <= 4; i++) {
-      option = document.createElement('option');
-      option.text = data[i].id;
-      // option.value = data[i].id;
-      secondDropdown.add(option);
-    }
+    populateRatings([1,2,3,4,5]);
   } else {
     // Reached the server, but it returned an error
   }
@@ -133,3 +122,23 @@ request.onerror = function () {
   console.error('An error occurred fetching the JSON from ' + url);
 };
 request.send();
+
+function populateRatings(items = [8, 9, 10]) {
+  var length = secondDropdown.options.length;
+  console.log(secondDropdown.options.length);
+  
+  for (i = 0; i < length; i++) {
+    secondDropdown.options[i] = null;
+  }
+  for (let i = 0; i < items.length; i++) {
+    option = document.createElement('option');
+    option.text = items[i];
+    // option.value = data[i].id;
+    secondDropdown.add(option);
+  }
+}
+
+onchangeevent(){
+  // check wheather its good bad poor
+  // populateRatings
+}

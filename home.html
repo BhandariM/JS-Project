@@ -54,36 +54,37 @@
             <div class="col-md-8">
                 <form id="form" style="float: right" onsubmit="return validateForm()">
                     <h1 class="color">Feedback Please!</h1>
-                    <label id="comment" style="color:white">If you like or dislike this page please enter following
-                        details below.
+                    <label id="comment" style="color:white" class="validation">If you like or dislike this page please
+                        enter following details below.
                         <br>This helps me to improve my skills in required areas. Thanks!</label>
                     <br><br>
                     <h4 style="color:white"><b>Full Name*:</b></h4> <input placeholder="Please enter your full name"
-                        id="username" style="width:375px " maxlength="35" type="text" name="usrname" required
-                        class="validate"><br>
+                        id="username" style="width:375px " maxlength="35" type="text" name="usrname" required><br>
                     <!-- <h4 style= "color:white" ><b>Rate my website*:</b></h4> <input id="rating" style="width:375px "  type="text" name="usrname" required ><br><br> -->
-                    <h4 style="color:white">Describe the website*:</h4><select style="width:150px" id="mainMenu"
-                        required class="validate">
-                        <option value="">Select</option>
+                    <h4 style="color:white">Describe the website*:</h4>
+                    <select style="width:150px" id="mainMenu" required class="validation">
+                        <option value="">select</option>
                         <option value="good">Good</option>
                         <option value="bad">Bad</option>
                         <option value="avg">Avg</option>
                     </select>
-                    <h4 style="color:white">Rate it from 1-5*:</h4><select style="width:170px" id="secondMenu" required
-                        class="validate">
-                        <option value="">choose one number</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">4</option>
+                    <h4 style="color:white">Rate it b/w 1-5*:</h4><select style="width:150px" id="secondMenu" required
+                        class="validation">
+                        <!-- <option value="">choose one </option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">4</option> -->
                     </select>
+                    <h4 style="color:white">Enter Phone number*:</h4><input onClick="phnum()" placeholder="xxx-xxx-xxxx"
+                        id="phnum" style="width:175px " maxlength="12" type="text" required><br>
                     <h4 style="color:white"><b>Comments*:</b></h4>
-                    <textarea class="validate" style="width: 500px;" rows="4" cols="50" maxlength="150" name="comment"
-                        id="commentbox" form="usrform" required></textarea>
+                    <textarea style="width: 500px;" rows="4" cols="50" maxlength="150" name="comment" id="commentbox"
+                        form="usrform" required class="validation"></textarea>
                     <br>
-                    <button style="align-content: center" type="button" class="btn btn-success" onclick="formSubmit()"
-                        value="success">Submit</button>
+                    <button id="subbtn" style="align-content: center" type="button" class="btn btn-success"
+                        onclick="formSubmit()" value="success" disabled>Submit</button>
 
                 </form>
 
