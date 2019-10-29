@@ -98,47 +98,75 @@ function formSubmit() {
 
 
 //-----api call for the second dropdown----
-let secondDropdown = document.getElementById('secondMenu');
-secondDropdown.length = 0;
-let defaultOption = document.createElement('option');
-defaultOption.text = "choose rating";
-defaultOption.value = "";
-secondDropdown.add(defaultOption);
-secondDropdown.selectedIndex = 0;
-const url = 'https://jsonplaceholder.typicode.com/comments';
-//const url = 'https://api.myjson.com/bins/7xq2x';
-const request = new XMLHttpRequest();
-request.open('GET', url, true);
-request.onload = function () {
-  if (request.status === 200) {
-    const data = JSON.parse(request.responseText);
-    let option;
-    populateRatings([1,2,3,4,5]);
-  } else {
-    // Reached the server, but it returned an error
-  }
-}
-request.onerror = function () {
-  console.error('An error occurred fetching the JSON from ' + url);
-};
-request.send();
+// let secondDropdown = document.getElementById('secondMenu');
+// secondDropdown.length = 0;
+// let defaultOption = document.createElement('option');
+// defaultOption.text = "choose rating";
+// defaultOption.value = "";
+// secondDropdown.add(defaultOption);
+// secondDropdown.selectedIndex = 0;
+// const url = 'https://jsonplaceholder.typicode.com/comments';
+// //const url = 'https://api.myjson.com/bins/7xq2x';
+// const request = new XMLHttpRequest();
+// request.open('GET', url, true);
+// request.onload = function () {
+//   if (request.status === 200) {
+//     const data = JSON.parse(request.responseText);
+//     let option;
+//     for(let i=0; i<=2; i++){
+//             option = document.createElement('option');
+//             option.text = data[i].id;
+//           //  option.value = data[i].abbrevation;
+//             mainMenu.add(option);
+//     // populateRatings([1,2,3,4,5]);
+//   } else {
+//     alert(" Reached the server, but it returned an error");
+//   }
+// }
+// request.onerror = function () {
+//   console.error('An error occurred fetching the JSON from ' + url);
+// };
+// request.send();
 
-function populateRatings(items = [8, 9, 10]) {
-  var length = secondDropdown.options.length;
-  console.log(secondDropdown.options.length);
+
+// function populateRatings(items = [8, 9, 10]) {
+//   var length = secondDropdown.options.length;
+//   console.log(secondDropdown.options.length);
   
-  for (i = 0; i < length; i++) {
-    secondDropdown.options[i] = null;
-  }
-  for (let i = 0; i < items.length; i++) {
-    option = document.createElement('option');
-    option.text = items[i];
-    // option.value = data[i].id;
-    secondDropdown.add(option);
-  }
-}
+//   for (i = 0; i < length; i++) {
+//     secondDropdown.options[i] = null;
+//   }
+//   for (let i = 0; i < items.length; i++) {
+//     option = document.createElement('option');
+//     option.text = items[i];
+//     // option.value = data[i].id;
+//     secondDropdown.add(option);
+//   }
+// }
 
-onchangeevent(){
-  // check wheather its good bad poor
-  // populateRatings
+// onchangeevent(){
+//   check wheather its good bad poor
+//   populateRatings
+// }
+
+function dynamicdropdown(listindex)
+{
+    switch (listindex)
+    {
+    case "good" :
+        document.getElementById("secondMenu").options[0]=new Option("Choose Rating","");
+        document.getElementById("secondMenu").options[1]=new Option("1","1");
+        document.getElementById("secondMenu").options[2]=new Option("2","2");
+        break;
+    case "avg" :
+        document.getElementById("secondMenu").options[0]=new Option("Choose Rating","");
+        document.getElementById("secondMenu").options[1]=new Option("3","3");
+        document.getElementById("secondMenu").options[2]=new Option("4","4");
+        break;
+    case "bad" :
+          document.getElementById("secondMenu").options[0]=new Option("Choose Rating","");
+          document.getElementById("secondMenu").options[1]=new Option("5","5");
+          break;
+    }
+    return true;
 }

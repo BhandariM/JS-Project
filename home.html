@@ -62,11 +62,11 @@
                         id="username" style="width:375px " maxlength="35" type="text" name="usrname" required><br>
                     <!-- <h4 style= "color:white" ><b>Rate my website*:</b></h4> <input id="rating" style="width:375px "  type="text" name="usrname" required ><br><br> -->
                     <h4 style="color:white">Describe the website*:</h4>
-                    <select style="width:150px" id="mainMenu" required class="validation">
+                    <select style="width:150px" id="mainMenu" required class="validation" onchange="dynamicdropdown(this.options[this.selectedIndex].value);">
                         <option value="">select</option>
                         <option value="good">Good</option>
-                        <option value="bad">Bad</option>
-                        <option value="avg">Avg</option>
+                        <option value="bad">Avg</option>
+                        <option value="avg">Bad</option>
                     </select>
                     <h4 style="color:white">Rate it b/w 1-5*:</h4><select style="width:150px" id="secondMenu" required
                         class="validation">
