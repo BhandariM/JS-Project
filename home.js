@@ -3,8 +3,12 @@ function formSubmit() {
   // var frstdrpdwn = document.getElementById("mainMenu").value;
   // var scnddrpdwn = document.getElementById("secondMenu").value;
   // var cmnt = document.getElementById("commentbox").value;
-  // var inputs = document.getElementsByClassName('validate');
+  var inputs = document.getElementsByClassName('validate');
 
+
+
+
+  var inputs = document.getElementsByClassName
   for (var i = 0; i < inputs.length; i++) {
     var element = inputs[i];
     if (!element.value) {
