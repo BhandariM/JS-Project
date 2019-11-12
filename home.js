@@ -1,3 +1,6 @@
+
+
+
 function formSubmit() {
   var uname = document.getElementById("username").value;
   var frstdrpdwn = document.getElementById("mainMenu").value;
@@ -38,6 +41,13 @@ function formSubmit() {
 
 }
 
+//--phone number validation
+// function validatePhoneNumber(elementValue){
+//   var phoneNumberPattern = /^\(?(\d{3})\)?[- ]?(\d{3})[- ]?(\d{4})$/;
+//   return phoneNumberPattern.test(elementValue);
+//   }
+/^\+1?\d{0-9}$/
+
 //  function phnum(inputtxt){
 //    var phoneno = /^\d{10}$/;
 //   // var phoneno = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
@@ -50,7 +60,6 @@ function formSubmit() {
 //          return false;
 //          }
 //  }
-
 
 //------api call for first dropdown from local json file-----
 let rating = document.getElementById("mainMenu");
@@ -155,9 +164,6 @@ function dynamicdropdown(listindex)
 
 //   }
 // }
-
-
-
     switch (listindex)
     {
     case "GOOD" :
