@@ -1,16 +1,13 @@
-
-var data =
-
-'[{
-    "name": "Alberta",
-    "abbreviation": "AB"
+[{
+    "name": "GOOD",
+    "abbreviation": "good"
   },
   {
-    "name": "British Columbia",
-    "abbreviation": "BC"
+    "name":"AVG",
+    "abbreviation": "avg"
   },
   {
-    "name": "Manitoba",
-    "abbreviation": "MB"
-  }]';
+    "name": "BAD",
+    "abbreviation": "bad"
+  }]
 

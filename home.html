@@ -52,7 +52,7 @@
                 </p>
             </div>
             <div class="col-md-8">
-                <form id="form" style="float: right" onsubmit="return validateForm()">
+                <form id="form" style="float: right" >
                     <h1 class="color">Feedback Please!</h1>
                     <label id="comment" style="color:white" class="validation">If you like or dislike this page please
                         enter following details below.
@@ -64,27 +64,29 @@
                     <h4 style="color:white">Describe the website*:</h4>
                     <select style="width:150px" id="mainMenu" required class="validation" onchange="dynamicdropdown(this.options[this.selectedIndex].value);">
                         <option value="">select</option>
-                        <option value="good">Good</option>
-                        <option value="bad">Avg</option>
-                        <option value="avg">Bad</option>
+                        <!-- <option value="good">Good</option>
+                        <option value="avg">Avg</option>
+                        <option value="bad">Bad</option> -->
                     </select>
-                    <h4 style="color:white">Rate it b/w 1-5*:</h4><select style="width:150px" id="secondMenu" required
+                    <h4 disabled style="color:white">Rate it b/w 1-5*:</h4>
+                    <select style="width:150px" id="secondMenu" required
                         class="validation">
-                        <!-- <option value="">choose one </option>
-                  <option value="1">1</option>
+                         <option value="">Describe the website </option>
+                  <!-- <option value="1">1</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
                   <option value="4">4</option>
-                  <option value="5">4</option> -->
+                  <option value="5">4</option>  -->
                     </select>
-                    <h4 style="color:white">Enter Phone number*:</h4><input onClick="phnum()" placeholder="xxx-xxx-xxxx"
-                        id="phnum" style="width:175px " maxlength="12" type="text" required><br>
+                    <h4 style="color:white">Enter Phone number*:</h4>
+                    <input placeholder="xxx-xxx-xxxx"
+                        id="phnum" style="width:175px " maxlength="12" type="tel" pattern="^\d{4}-\d{3}-\d{4}$" required><br>
                     <h4 style="color:white"><b>Comments*:</b></h4>
                     <textarea style="width: 500px;" rows="4" cols="50" maxlength="150" name="comment" id="commentbox"
                         form="usrform" required class="validation"></textarea>
                     <br>
                     <button id="subbtn" style="align-content: center" type="button" class="btn btn-success"
-                        onclick="formSubmit()" value="success" disabled>Submit</button>
+                        onclick="formSubmit()" value="success" >Submit</button>
 
                 </form>
 
@@ -102,6 +104,7 @@
 
 
 </body>
-<script src="home.js" javascript/text"> </script> <script type="text/javascript" src="home.json></script
+<script src="home.js" javascript/text"> </script>
+<script type="text/javascript" src="home.json"></script>
 
 </html>
