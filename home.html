@@ -12,8 +12,8 @@
     <div class="header">
         <header>
             <h3 id="heading-name"><b> Mounika Bhandari</b></h3>
-            <!-- <input class="form-control" style="width: 180px; float: right; margin-top: -5px" type="text"
-                placeholder="Search" aria-label="Search"> -->
+            <input class="form-control" style="width: 180px; float: right; margin-top: -5px" type="text"
+                placeholder="Search" aria-label="Search">
             <nav style="float: right; padding-right:30px ">
                 <div>
                     <a style="color:white" href="home.html">
@@ -71,7 +71,7 @@
                     <h4 disabled style="color:white">Rate it b/w 1-5*:</h4>
                     <select style="width:150px" id="secondMenu" required
                         class="validation">
-                         <option value="">choose rating </option>
+                         <option value="">Describe the website </option>
                   <!-- <option value="1">1</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
@@ -79,8 +79,8 @@
                   <option value="5">4</option>  -->
                     </select>
                     <h4 style="color:white">Enter Phone number*:</h4>
-                    <input placeholder="xxx-xxx-xxxx"
-                        id="phnum" style="width:175px " maxlength="12" type="tel" pattern="^/^\+1?\d{0-9}$/" required><br>
+                    <input placeholder="xxx-xxx-xxxx" onblur="phnumber(event)"
+                        id="phnum" style="width:175px " maxlength="16" type="tel" pattern="^\d{4}-\d{3}-\d{4}$" required><br>
                     <h4 style="color:white"><b>Comments*:</b></h4>
                     <textarea style="width: 500px;" rows="4" cols="50" maxlength="150" name="comment" id="commentbox"
                         form="usrform" required class="validation"></textarea>
