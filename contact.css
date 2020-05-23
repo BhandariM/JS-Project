@@ -1,18 +1,12 @@
 
-
-/* disable:true---means its active
-disable:false--means its inactive */
-
-
 body{
-    background-image: url("image1.jpg");
+    background-image: url("download.jfif");
+    background-size: cover
 }
 
 header{
-    /* background-color: rgb(49, 52, 59); */
-    background-color:rgb(69, 82, 115);
+    background-color:rgb(94, 88, 90);
     padding: 10px;
-
 }
 #heading-name{
     color: white;

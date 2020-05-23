@@ -172,8 +172,8 @@ request1.send();
 //     mainMenu.add(option);
 // }
 
-function dynamicdropdown(listindex)
-{
+// function dynamicdropdown(listindex)
+// {
 //   if(mainMenu.value= "good"){
 //     populateRatings([1,2]);
 
@@ -187,22 +187,35 @@ function dynamicdropdown(listindex)
 
 //   }
 // }
-    switch (listindex)
-    {
-    case "GOOD" :
-        document.getElementById("secondMenu").options[0]=new Option("Choose Rating","");
-        document.getElementById("secondMenu").options[1]=new Option("1","1");
-        document.getElementById("secondMenu").options[2]=new Option("2","2");
-        break;
-    case "AVG" :
-        document.getElementById("secondMenu").options[0]=new Option("Choose Rating","");
-        document.getElementById("secondMenu").options[1]=new Option("3","3");
-        document.getElementById("secondMenu").options[2]=new Option("4","4");
-        break;
-    case "BAD" :
-          document.getElementById("secondMenu").options[0]=new Option("Choose Rating","");
-          document.getElementById("secondMenu").options[1]=new Option("5","5");
-          break;
+    // switch (listindex)
+    // {
+    // case "GOOD" :
+    //     document.getElementById("secondMenu").options[0]=new Option("Choose Rating","");
+    //     document.getElementById("secondMenu").options[1]=new Option("1","1");
+    //     document.getElementById("secondMenu").options[2]=new Option("2","2");
+    //     break;
+    // case "AVG" :
+    //     document.getElementById("secondMenu").options[0]=new Option("Choose Rating","");
+    //     document.getElementById("secondMenu").options[1]=new Option("3","3");
+    //     document.getElementById("secondMenu").options[2]=new Option("4","4");
+    //     break;
+    // case "BAD" :
+    //       document.getElementById("secondMenu").options[0]=new Option("Choose Rating","");
+    //       document.getElementById("secondMenu").options[1]=new Option("5","5");
+    //       break;
+    // }
+    // return true;
+    // }
+
+    var option = document.getElementById("secondMenu").options;
+    if ( document.getElementById("mainMenu").value === "GOOD"){
+      $("#secondMenu").append("<option>1</option>");
+      $("#secondMenu").append("<option>2</option>");
     }
-    return true;
+     if ( document.getElementById("mainMenu").value === "AVG"){
+      $("#secondMenu").append("<option>3</option>");
+      $("#secondMenu").append("<option>4</option>");
+    }
+    if( document.getElementById("mainMenu").value === "BAD"){
+       $("#secondMenu").append("<option>5</option>");
     }
