@@ -1,3 +1,5 @@
+
+
 function redirect() { 
-    window.location.href("https://www.linkedin.com/in/mounika-banda-290b7b151/"); 
+    window.open("https://www.linkedin.com/in/mounika-banda-290b7b151/", "_newtab");
 }

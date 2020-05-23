@@ -31,6 +31,7 @@ function formSubmit() {
   console.log(cmnt, "are the comments ");
   var clear = document.getElementById("username").value = " ";
   var clear = document.getElementById("mainMenu").value = " ";
+  var clear = document.getElementById("secondMenu").option = " ";
   var clear = document.getElementById("secondMenu").value = " ";
   var clear = document.getElementById("phnum").value = " ";
   var clear = document.getElementById("commentbox").value = " ";
