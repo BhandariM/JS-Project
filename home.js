@@ -207,15 +207,25 @@ request1.send();
     // return true;
     // }
 
-    var option = document.getElementById("secondMenu").options;
-    if ( document.getElementById("mainMenu").value === "GOOD"){
-      $("#secondMenu").append("<option>1</option>");
-      $("#secondMenu").append("<option>2</option>");
-    }
-     if ( document.getElementById("mainMenu").value === "AVG"){
-      $("#secondMenu").append("<option>3</option>");
-      $("#secondMenu").append("<option>4</option>");
-    }
-    if( document.getElementById("mainMenu").value === "BAD"){
-       $("#secondMenu").append("<option>5</option>");
-    }
+    // var option = document.getElementById("secondMenu").options;
+    // if ( document.getElementById("mainMenu").value === "GOOD"){
+    //   $("#secondMenu").append("<option>1</option>");
+    //   $("#secondMenu").append("<option>2</option>");
+    // }
+    //  if ( document.getElementById("mainMenu").value === "AVG"){
+    //   $("#secondMenu").append("<option>3</option>");
+    //   $("#secondMenu").append("<option>4</option>");
+    // }
+    // if( document.getElementById("mainMenu").value === "BAD"){
+    //    $("#secondMenu").append("<option>5</option>");
+    // }
+
+    if(mainMenu.value= "good"){
+      secondMenu.value = [1,2]; 
+        }
+     else   if(mainMenu.value= "bad"){
+          secondMenu.value = [5]; 
+            }
+          else  if(mainMenu.value= "avg"){
+              secondMenu.value = [3,4]; 
+                }

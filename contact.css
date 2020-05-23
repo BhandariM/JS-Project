@@ -17,17 +17,18 @@ header{
 
 h3 {
     color: white;
-    /* padding-left: 40px; */
     display: inline;
     }
-    h1{
-        /* color: rebeccapurple; */
+h1{
         color: white;
-        margin-top: 70px;
         margin-right: 30px;
     
     }
-
+.border{
+    border:5px solid whitesmoke;
+    margin:250px 480px;
+    padding-bottom: 30px;
+}
     
     Different Types of SQL JOINs
     Here are the different types of the JOINs in SQL:
