@@ -1,0 +1,115 @@
+---html---
+<h1>CURD logics:</h1>
+<span>Final Number:<p class="input" id="textInit">0</p></span>
+<button onclick="add()">Add(+)</button>
+<button onclick="subract()">Sucbract(-)</button>
+<button onclick="multiplyVal()">Multiply</button>
+<button onclick="randomNum()">Rondom multiplication</button>
+<button onclick="clearVal()">Clear</button>
+<br>
+<span>Random Number:<p class="input" id="randomNum">0</p></span>
+
+<span>Time:<p class="input" id="time"></p></span>
+<span>Date:<p class="input" id="date"></p></span>
+-----------------------------------------------------------------------------
+<br>
+<h1>STOP WATCH:</h1>
+<h3>
+    <span id="minutes">00</span>
+    <span>:</span>
+    <span id="seconds">00</span>
+    <span>:</span>
+    <span id="milliseconds">00</span>
+</h3>
+<button onclick="start()">Start</button>
+<button onclick="stop()">Stop</button>
+<button onclick="reset()">Reset</button>
+<script src="index.js"></script>
+
+
+--js--
+window.addEventListener('load', function showTheDate() {
+    today = new Date();
+    console.log('today', today);
+    var dd = today.getDate();
+    var mm = today.getMonth() + 1;
+    var yyyy = today.getFullYear();
+    document.getElementById("date").innerHTML = mm + '/' + dd + '/' + yyyy;
+}
+)
+
+window.addEventListener('load', function showTheTime() {
+    today = new Date();
+    console.log('today', today);
+    var hr = today.getHours();
+    var min = today.getMinutes() + 1;
+    var sec = today.getSeconds();
+    document.getElementById("time").innerHTML = hr + ':' + min + ':' + sec;
+}
+)
+
+function randomNum() {
+    var val = Number(document.getElementById("textInit").innerHTML);
+    var ran = Math.random() * 10
+    var ranRoundNum = Math.floor(ran)
+    console.log(ran, "random num");
+    document.getElementById("randomNum").innerHTML = ranRoundNum;
+    document.getElementById("textInit").innerHTML = ranRoundNum * val;
+
+}
+
+function add() {
+    //  var a = 1;
+    //var input = parseInt(document.getElementsByClassName("input").value);
+    var input = Number(document.getElementById("textInit").innerHTML);
+    console.log(input);
+    //document.getElementsByClassName("input").value = inc;
+    var inc = input + 1;
+    console.log(inc, "max input")
+    // var inc = input++;
+    // console.log(inc, "minnu inc")
+    // return inc;
+    document.getElementById("textInit").innerHTML = inc;
+}
+
+function subract() {
+    var output = Number(document.getElementById("textInit").innerHTML);
+    console.log(output--);
+    var dec = output--;
+    console.log(dec, "dec input")
+    document.getElementById("textInit").innerHTML = dec;
+}
+
+function clearVal() {
+    console.log("mini")
+    var clr = Number(document.getElementById("textInit").innerHTML);
+    clr = 0;
+    console.log(clr, "min clr");
+    document.getElementById("textInit").innerHTML = clr;
+    document.getElementById("randomNum").innerHTML = clr;
+}
+
+function multiplyVal() {
+    var mul = Number(document.getElementById("textInit").innerHTML);
+    var multiply = mul * mul;
+    console.log(multiply, "multiply input")
+    document.getElementById("textInit").innerHTML = multiply;
+
+}
+
+var date = new date();
+function start() {
+    console.log("start")
+    var mins = date.getMinutes();
+    console.log("start", mins)
+    document.getElementById("minutes") = mins;
+
+}
+
+function stop() {
+
+}
+
+function reset() {
+
+}
