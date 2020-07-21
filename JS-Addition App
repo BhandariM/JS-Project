@@ -13,17 +13,20 @@
 <span>Date:<p class="input" id="date"></p></span>
 -----------------------------------------------------------------------------
 <br>
-<h1>STOP WATCH:</h1>
-<h3>
-    <span id="minutes">00</span>
-    <span>:</span>
-    <span id="seconds">00</span>
-    <span>:</span>
-    <span id="milliseconds">00</span>
-</h3>
-<button onclick="start()">Start</button>
-<button onclick="stop()">Stop</button>
-<button onclick="reset()">Reset</button>
+<p  id="hrs" >00:00:00</p>
+<button onClick = "startTimers()" id="startTimer">Start Tiimer</button>
+<button onClick = "stopTimers()" id="stopTimer">Stop Tiimer</button>
+<button onClick = "resetTimers()" id="resetTimer">Reset Tiimer</button>
+<br>
+-------------------------------------------------------------------------------------------------------------------------------
+
+<p  id="color" >Color change</p>
+<button onClick = "startColor()" id="startColor">Start Color Change</button>
+<button onClick = "stopColor()" id="stopColor">Stop Color Change </button>
+<br>
+-------------------------------------------------------------------------------------------------------------------------------
+
+
 <script src="index.js"></script>
 
 
@@ -97,19 +100,48 @@ function multiplyVal() {
 
 }
 
-var date = new date();
-function start() {
-    console.log("start")
-    var mins = date.getMinutes();
-    console.log("start", mins)
-    document.getElementById("minutes") = mins;
-
+function startTimers(){
+  var day = new Date();
+  console.log("get date" , day)
+var hrs = day.getHours();
+var mins = day.getMinutes();
+var secs = day.getSeconds();
+console.log("get time" , hrs,mins,secs)
+document.getElementById("hrs").innerHTML = hrs + ":" + mins + ":" + secs;
+ t = setTimeout(function() {
+  startTimers();
+  });
 }
 
-function stop() {
-
+function stopTimers(){
+  console.log("stop timer");
+  clearTimeout(t);
 }
 
-function reset() {
-
+function resetTimers(){
+  console.log("reset timer");
+  clearInterval(t);
+  document.getElementById("hrs").innerHTML = "00:00:00";
 }
+
+
+var color = 0;
+function startColor(){
+ int = setInterval( function(){
+   var colorList = ["Red", "Maroon", "Green", "orange", "Blue", "Purple", "Black", "Pink", "Yellow","Grey" ,"Violet"];
+      console.log(colorList,"array color list");
+      // document.getElementById("color").style.color = colorList[color];
+      document.getElementById("color").style.color =colorList[Math.floor(Math.random() * colorList.length)]
+      color++;
+      console.log(color,"array color list");
+//  if(color == colorList.length ){
+//   clearInterval(int);
+//  }
+},1000);
+}
+
+function stopColor(){
+  clearInterval(int);
+}
+
+
