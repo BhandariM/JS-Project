@@ -1,0 +1,59 @@
+<div class= "tip">
+    <h3>TIP CALCULATOR</h3>
+    <label>Bill amount in $:</label>
+    <input type="number" id="bill" name="bill">
+    <br>
+    <br>
+
+    <label >Number of people:</label>
+    <input type="number" id="people" name="people">
+    <br>
+    <br>
+
+    <label">Tip Percentage:</label><br><br>
+    <select id="prcntOption">
+        <option value="">--choose percentage--</option>
+        <option value="5">5%</option>
+        <option value="10">10%</option>
+        <option value="15">15%</option>
+        <option value="20">20%</option>
+      </select>
+      <br>
+      <br>
+      <span>Tip Amount:<p  id="tipamt"></p></span>
+   
+      <span>Total<p  id="total"></p></span>
+      <br>
+      <br>
+    
+      <button onClick = "calculator()" id="calculate">CALCULATE!</button>
+    </div>
+
+    <script type="text/javascript" src="tip cal.js"></script>
+    
+    ------------------------------------------------------------------------------------------------------
+    
+function calculator(){
+    var bill = document.getElementById("bill").value;
+    console.log(bill, " is the bill");
+    var perPersonShare = document.getElementById("people").value;
+    console.log(perPersonShare, "people share");
+    var perHead = bill/perPersonShare;
+    console.log(perHead, "per head share");
+    var prcnt = document.getElementById("prcntOption").value;
+    console.log(prcnt, "% tip");
+
+if ((bill === "" || bill === 0) || (perPersonShare === "" || perPersonShare === 0) || ( prcnt == 0) ){
+window.alert("Please enter all the fields");
+}
+else{
+    var tipAmt =((bill/perPersonShare) * 5/100);
+    console.log(tipAmt, "total tip amount");
+    var tol = tipAmt + perHead;
+    console.log(tol, "total end amount");
+    document.getElementById("tipamt").innerHTML = tipAmt;
+    document.getElementById("total").innerHTML = tol;
+}
+
+}
+    
